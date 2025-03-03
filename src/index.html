@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warfare World</title>
+    <script>
+        window.contexts = {}
+        window.onresize = function() {
+            const canvas = document.getElementById('gameCanvas');
+            // Store the current canvas content before resize
+            const ctx = canvas.getContext('2d');
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = canvas.width;
+            tempCanvas.height = canvas.height;
+            const tempCtx = tempCanvas.getContext('2d');
+            tempCtx.drawImage(canvas, 0, 0);
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Restore the previous content
+            ctx.drawImage(tempCanvas, 0, 0);
+        }
+        // Call once on initial load
+        window.onload = function() {
+            window.onresize();
+        }
+    </script>
+    <!--
+    <script src="contexts/title-screen.js"></script>
+    <script src="contexts/pause-screen.js"></script>
+    <script src="contexts/victory-screen.js"></script>
+    <script src="contexts/game-over-screen.js"></script>
+    <script src="contexts/dialogue.js"></script>
+    <script src="contexts/animation.js"></script>
+    -->
+    <style>
+        body {
+            background-color: black;
+            text-align:center;
+            overflow: hidden;
+            color:white;
+        }
+
+        #gameCanvas {
+            position:absolute; 
+            top:0; 
+            left:0;
+        }
+        #dummy {
+            display:none;
+        }
+
+        #debug-text{
+            position:absolute;
+            background-color:black;
+            top:0;
+            left:0;
+            z-index:5;
+            visibility:hidden;
+        }
+    </style>
+    <canvas id="gameCanvas" width="100%"></canvas>
+    <!--this is a dummy canvas. first we will render here at 800x600 resolution then scale up
+      and draw the image on the main game canvas-->
+    <canvas id="dummy"></canvas>
+    <div id="debug-text">
+    <!-- add variables to window.debugVariables to see them output here. That way we can look at 
+        what's going on in real time -->
+</head>
+<body>
+
+</body>
+</html>

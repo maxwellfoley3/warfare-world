@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "NodeNext",
+      "strict": true,
+      "outDir": "dist",
+      "sourceMap": true,
+      "moduleResolution": "nodenext",
+      "noImplicitAny": false,
+    },
+    "include": ["src", "public/contexts"]
+  }
