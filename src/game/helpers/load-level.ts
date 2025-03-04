@@ -121,9 +121,9 @@ export function loadLevel(index: number, entranceEvent?, player?) {
           if(levelOptions.scenery) { 
             level.scenery = levelOptions.scenery
             //i guess we can just add scenery as gameobjects?
-            level.scenery.forEach((scenery)=>{
+            level.scenery.forEach((scenery, index)=>{
               scenery.render = scenery.render.bind(level);
-              window.gameObjects.register(scenery);
+              window.gameObjects.register(scenery, scenery.name + "-" + index);
             })
           
           };

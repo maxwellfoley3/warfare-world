@@ -67,7 +67,6 @@ export class GameObjectList {
       return;
     }
   
-
     //now to handle the case where it's not an array
     //if an id was specified, use that id. Otherwise use the class name plus an arbitrary 
     // reference number

@@ -23,7 +23,6 @@ export class Injury implements Updater {
       //die if hit with a bullet 
       if(event.with.startsWith("Bullet") && !this.immunityCounter) {
         if(!this.hp) {
-          console.log("enemy death")
           window.gameEvents.push({type:"enemy-death", position:{x:this.go.p.x, y:this.go.p.y}});
           this.go.deleteMe = true;
         }
