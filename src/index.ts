@@ -45,7 +45,7 @@ window.startGame = function() {
   // ^^ will have id "PlatformWalker1"
   //window.gameObjects.register(new SoldierX(40, 40), "player");
   // ^^ will have id "player"
-  loadLevel( 6/*window.saveState.level*/);
+  loadLevel( 5/*window.saveState.level*/);
 
  // window.resumeGame();
 }
